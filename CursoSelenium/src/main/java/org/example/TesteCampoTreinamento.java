@@ -114,6 +114,8 @@ public class TesteCampoTreinamento {
             }
         }
         Assert.assertTrue(encontrou);
+
+        driver.quit();
     }
 
 
