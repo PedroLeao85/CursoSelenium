@@ -11,7 +11,7 @@ public class TesteGoogle {
 
     @Test
     public void teste() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\phalv\\Documents\\chromedriver-win32\\chromedriver-win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1200,765));
         //driver.manage().window().maximize();
