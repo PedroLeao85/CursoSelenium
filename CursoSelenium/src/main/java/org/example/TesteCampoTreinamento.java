@@ -15,7 +15,7 @@ public class TesteCampoTreinamento {
 
     @Test
     public void testeTextField(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1200,765));
@@ -33,7 +33,7 @@ public class TesteCampoTreinamento {
 
     @Test
     public void deveInteragirComTextArea(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1200,765));
@@ -47,7 +47,7 @@ public class TesteCampoTreinamento {
 
     @Test
     public void deveInteragirComRadioButton() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1200, 765));
@@ -63,7 +63,7 @@ public class TesteCampoTreinamento {
 
     @Test
     public void deveInteragirComCheckBox(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1200, 765));
@@ -76,7 +76,7 @@ public class TesteCampoTreinamento {
 
     @Test
     public void deveInteragirComCombo() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1200, 765));
@@ -95,7 +95,7 @@ public class TesteCampoTreinamento {
 
     @Test
     public void deveVerificarValoresCombo() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1200, 765));
@@ -115,12 +115,12 @@ public class TesteCampoTreinamento {
         }
         Assert.assertTrue(encontrou);
 
-        //driver.quit();
+        driver.quit();
     }
 
     @Test
     public void deveVerificarValoresComboMultiplo() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\phalv\\Documents\\chromedriver-win32\\chromedriver-win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1200, 765));
@@ -138,12 +138,12 @@ public class TesteCampoTreinamento {
         combo.deselectByVisibleText("Corrida");
         List<WebElement> alSelectedOptions = combo.getAllSelectedOptions();
         Assert.assertEquals(2, alSelectedOptions.size());
-        //driver.quit();
+        driver.quit();
     }
 
     @Test
     public void deveInteragirComBotoes() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\phalv\\Documents\\chromedriver-win32\\chromedriver-win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1200, 765));
