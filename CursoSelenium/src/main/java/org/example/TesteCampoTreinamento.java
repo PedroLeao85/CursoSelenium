@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -14,33 +15,33 @@ import java.util.List;
 public class TesteCampoTreinamento {
 
     @Test
-    public void testeTextField(){
+    public void testeTextField() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().setSize(new Dimension(1200,765));
+        driver.manage().window().setSize(new Dimension(1200, 765));
         driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
 
         driver.findElement(By.id("elementosForm:nome")).sendKeys("Teste de Escrita");
-        Assert.assertEquals("Teste de Escrita" , driver.findElement(By.id("elementosForm:nome")).getAttribute("value"));
+        Assert.assertEquals("Teste de Escrita", driver.findElement(By.id("elementosForm:nome")).getAttribute("value"));
 
         driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("Teste123");
-        Assert.assertEquals("Teste123" , driver.findElement(By.id("elementosForm:sobrenome")).getAttribute("value"));
+        Assert.assertEquals("Teste123", driver.findElement(By.id("elementosForm:sobrenome")).getAttribute("value"));
 
 
         //driver.quit();
     }
 
     @Test
-    public void deveInteragirComTextArea(){
+    public void deveInteragirComTextArea() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().setSize(new Dimension(1200,765));
+        driver.manage().window().setSize(new Dimension(1200, 765));
         driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
 
         driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("teste123");
-        Assert.assertEquals("teste123" , driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
+        Assert.assertEquals("teste123", driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
 
         driver.quit();
     }
@@ -57,12 +58,11 @@ public class TesteCampoTreinamento {
         Assert.assertTrue(driver.findElement(By.id("elementosForm:sexo:0")).isSelected());
 
 
-
         driver.quit();
     }
 
     @Test
-    public void deveInteragirComCheckBox(){
+    public void deveInteragirComCheckBox() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
@@ -87,7 +87,7 @@ public class TesteCampoTreinamento {
         //combo.selectByIndex(3);
         //combo.selectByValue("superior");
         combo.selectByVisibleText("2o grau completo");
-        Assert.assertEquals("2o grau completo" , combo.getFirstSelectedOption().getText());
+        Assert.assertEquals("2o grau completo", combo.getFirstSelectedOption().getText());
 
         driver.quit();
     }
@@ -107,8 +107,8 @@ public class TesteCampoTreinamento {
         Assert.assertEquals(8, options.size());
 
         boolean encontrou = false;
-        for (WebElement option: options){
-            if (option.getText().equals("Mestrado")){
+        for (WebElement option : options) {
+            if (option.getText().equals("Mestrado")) {
                 encontrou = true;
                 break;
             }
@@ -151,7 +151,37 @@ public class TesteCampoTreinamento {
         WebElement botao = driver.findElement(By.id("buttonSimple"));
         botao.click();
 
-        Assert.assertEquals("Obrigado!" , botao.getAttribute("value"));
+        Assert.assertEquals("Obrigado!", botao.getAttribute("value"));
+        driver.quit();
+
+    }
+
+    @Test
+
+    public void deveInteragirComLinks() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().setSize(new Dimension(1200, 765));
+        driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+        driver.findElement(By.linkText("Voltar")).click();
+        Assert.assertEquals("Voltou!" , driver.findElement(By.id("resultado")).getText());
+
+        driver.quit();
+
+    }
+
+    @Test
+    public void deveBuscarTextosNaPagina() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().setSize(new Dimension(1200, 765));
+        driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+
+        //Assert.assertTrue(driver.findElement(By.tagName("body")).getText().contains("Campo de Treinamento"));
+        Assert.assertEquals("Campo de Treinamento" , driver.findElement(By.tagName("h3")).getText());
+        Assert.assertEquals("Cuidado onde clica, muitas armadilhas..." , driver.findElement(By.className("facilAchar")).getText());
         driver.quit();
 
     }
