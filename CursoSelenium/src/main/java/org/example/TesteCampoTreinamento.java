@@ -71,7 +71,7 @@ public class TesteCampoTreinamento {
 
         driver.findElement(By.id("elementosForm:comidaFavorita:2")).click();
         Assert.assertTrue(driver.findElement(By.id("elementosForm:comidaFavorita:2")).isSelected());
-        driver.quit();
+        //driver.quit();
     }
 
     @Test
@@ -89,7 +89,7 @@ public class TesteCampoTreinamento {
         combo.selectByVisibleText("2o grau completo");
         Assert.assertEquals("2o grau completo", combo.getFirstSelectedOption().getText());
 
-        driver.quit();
+       // driver.quit();
     }
 
 
@@ -138,7 +138,7 @@ public class TesteCampoTreinamento {
         combo.deselectByVisibleText("Corrida");
         List<WebElement> alSelectedOptions = combo.getAllSelectedOptions();
         Assert.assertEquals(2, alSelectedOptions.size());
-        driver.quit();
+        //driver.quit();
     }
 
     @Test
@@ -185,4 +185,6 @@ public class TesteCampoTreinamento {
         driver.quit();
 
     }
+
+
 }
