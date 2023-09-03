@@ -65,4 +65,25 @@ public class TesteAlert {
 
         driver.quit();
     }
+
+    @Test
+    public void deveInteragirComPrompt() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().setSize(new Dimension(1200, 765));
+        driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+
+        driver.findElement(By.id("prompt")).click();
+        Alert alert = driver.switchTo().alert();
+        Assert.assertEquals("Digite um numero" , alert.getText());
+        alert.sendKeys("13");
+        alert.accept();
+        Assert.assertEquals("Era 13?" , alert.getText());
+        alert.accept();
+        Assert.assertEquals(":D" , alert.getText());
+        alert.accept();
+
+        driver.quit();
+    }
 }
