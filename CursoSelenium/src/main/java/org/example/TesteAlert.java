@@ -27,6 +27,42 @@ public class TesteAlert {
         driver.quit();
 
     }
+    @Test
+    public void deveInteragirComAlertConfirm() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().setSize(new Dimension(1200, 765));
+        driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+
+        WebElement confirm = driver.findElement(By.id("confirm"));
+        confirm.click();
+        Alert alert = driver.switchTo().alert();
+        Assert.assertEquals("Confirm Simples" , alert.getText());
+        alert.accept();
+        Assert.assertEquals("Confirmado" , alert.getText());
+        alert.accept();
+
+        driver.quit();
+
+    }
+    @Test
+    public void deveInteragirComAlertCancela() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pedro\\Documents\\Selenium\\VersaoSelenium\\116\\chromedriver-win64\\chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().setSize(new Dimension(1200, 765));
+        driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+
+        WebElement cancela = driver.findElement(By.id("Confirm"));
+        cancela.click();
+        Alert alert = driver.switchTo().alert();
+        Assert.assertEquals("Confirm Simples" , alert.getText());
+        alert.dismiss();
+        Assert.assertEquals("Negado" , alert.getText());
+        alert.dismiss();
 
 
+        driver.quit();
+    }
 }
